@@ -1,0 +1,113 @@
+﻿@page "/"
+@using BlazorApp1.Models;
+
+<h3>Plan</h3>
+
+@* the following enables server-side loading when run locally   *@
+@* <div class="row"><div class="col-md-12"><InputText @bind-Value="filename" style="width:100%"></InputText></div></div>
+<div class="row">
+    <div class="col-md-3"><button @onclick="Load">Load</button></div>
+</div> *@
+
+<div class="row">
+    @* <div class="col-md-12"><InputTextArea @bind-Value="textarea" style="width:100%; height: 25em"></InputTextArea></div> *@
+    <div class="col-md-12"><InputLargeTextArea id="largeTextArea" @ref="TextArea"
+        style="height: 25em; width: 100%" /></div>
+@code {
+}
+</div>
+<div class="row">
+    <div class="col-md-3"><button @onclick="LoadTextarea">Load</button></div>
+</div>
+
+<div class="row" style="color: red">
+    <div class="col-md-12">@error</div>
+</div>
+
+<div class="prettyplan">
+
+<ul id="actions" class="actions">
+@foreach (var action in actions)
+{
+    @* <Change TerraformChange="item"></Change> *@
+
+    <li class="@action.ChangeType.ToString().ToLower()">
+        <div class="summary" @onclick="() => accordion(action)">
+            <span class="badge">@action.ChangeType</span>
+
+            <span class="id">
+                @foreach (var prefix in action.TerraformResourceId.Prefixes) {
+                    <span class="id-segment prefix">@prefix</span>
+                }
+                <span class="id-segment type">@action.TerraformResourceId.Type</span>
+                <span class="id-segment name">
+                            @action.TerraformResourceId.Name
+                            @if (!string.IsNullOrEmpty(@action.TerraformResourceId.Index)) {
+                                <span class="id-segment index"> [@action.TerraformResourceId.Index]</span>
+                            }
+                </span>
+            </span>
+
+            <span class="change-count"> @action.Changes.Count changes </span>
+        </div>
+        @if (action.IsOpen) {
+        <div class="changes">
+            <span class="change-count"> @action.Address </span>
+
+            <table>
+                <tbody>
+                    @if (action.ReplacePaths.Count > 0)
+                    {
+                        <tr><td class="property">@string.Join(',', action.ReplacePaths.Select(c => c.Key).ToList())</td><td class="old-value"></td><td class="new-value"><pre><i>(causes replacement)</i></pre></td></tr>
+                    }
+                    @foreach (TerraformChange change in action.Changes) {
+                        <tr key="@change.Property">
+                            @if (!fancyView)
+                            {
+                                <td class="property">@change.Property</td>
+                                <td class="old-value"><pre>@change.Old</pre></td>
+                                            @if (false)
+                                            {
+                                                <td class="new-value">@if (!string.IsNullOrEmpty(change.New?.ToString()))
+                                                    {
+                                                        <pre>@change.New</pre>
+                                                    }
+                                                    @if (change.NewComputed)
+                                                    {
+                                                        <pre><i>(computed)</i></pre>
+                                                    }
+                                                    @if (change.CausesReplacement)
+                                                    {
+                                                        <pre><i>(causes replacement)</i></pre>
+                                                    }
+                                                </td>
+                                            }
+                                            <td class="new-value"><pre>@((MarkupString)change.NewSerialized)</pre>
+                                                @if (change.CausesReplacement)
+                                                {
+                                                    <pre><i>(causes replacement)</i></pre>
+                                                }
+                                            </td>
+
+                                    
+                            } else {
+                                <td>
+                                    <b>@change.Property</b>
+                                    <vue-json-compare :oldData="change.old" :newData="change.new">
+                                    </vue-json-compare>
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        }
+    </li>
+}
+</ul>
+</div>
+
+@code {
+
+}

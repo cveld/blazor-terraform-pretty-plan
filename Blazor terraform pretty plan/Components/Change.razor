@@ -1,0 +1,7 @@
+﻿@using BlazorApp1.Models;
+<h3>Change</h3>
+@TerraformChange?.Property
+@code {
+    [Parameter]
+    public TerraformChange? TerraformChange { get; set; }
+}

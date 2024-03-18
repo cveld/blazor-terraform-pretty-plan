@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34112.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InputLargeTextArea", "InputLargeTextArea\InputLargeTextArea.csproj", "{AE150656-EEB4-49EA-AC54-ABC1E73FF49D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor terraform pretty plan", "Blazor terraform pretty plan\Blazor terraform pretty plan.csproj", "{44B81E85-639C-4F8D-8773-D6B5FFD4C12E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrettyPlanWasm", "PrettyPlanWasm\PrettyPlanWasm\PrettyPlanWasm.csproj", "{44D62C6B-DA79-43B3-A53D-99DD143D34A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrettyPlanWasm.Client", "PrettyPlanWasm\PrettyPlanWasm.Client\PrettyPlanWasm.Client.csproj", "{89A1AAD2-27EA-4E1F-B519-D9AFA9CF39EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrettyPlanWasmStandalone", "PrettyPlanWasmStandalone\PrettyPlanWasmStandalone.csproj", "{21580C13-2D35-473A-84DA-0BAF310A0987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyPlanLib", "PrettyPlanLib\PrettyPlanLib.csproj", "{E32713BE-D5FA-4A13-BF59-F48597314E88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE150656-EEB4-49EA-AC54-ABC1E73FF49D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE150656-EEB4-49EA-AC54-ABC1E73FF49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE150656-EEB4-49EA-AC54-ABC1E73FF49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE150656-EEB4-49EA-AC54-ABC1E73FF49D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B81E85-639C-4F8D-8773-D6B5FFD4C12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B81E85-639C-4F8D-8773-D6B5FFD4C12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B81E85-639C-4F8D-8773-D6B5FFD4C12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B81E85-639C-4F8D-8773-D6B5FFD4C12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D62C6B-DA79-43B3-A53D-99DD143D34A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D62C6B-DA79-43B3-A53D-99DD143D34A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D62C6B-DA79-43B3-A53D-99DD143D34A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D62C6B-DA79-43B3-A53D-99DD143D34A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A1AAD2-27EA-4E1F-B519-D9AFA9CF39EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A1AAD2-27EA-4E1F-B519-D9AFA9CF39EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A1AAD2-27EA-4E1F-B519-D9AFA9CF39EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A1AAD2-27EA-4E1F-B519-D9AFA9CF39EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21580C13-2D35-473A-84DA-0BAF310A0987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21580C13-2D35-473A-84DA-0BAF310A0987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21580C13-2D35-473A-84DA-0BAF310A0987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21580C13-2D35-473A-84DA-0BAF310A0987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E32713BE-D5FA-4A13-BF59-F48597314E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32713BE-D5FA-4A13-BF59-F48597314E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32713BE-D5FA-4A13-BF59-F48597314E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32713BE-D5FA-4A13-BF59-F48597314E88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FD93759-46E6-466C-94C6-F1F6AF47CB8C}
+	EndGlobalSection
+EndGlobal
