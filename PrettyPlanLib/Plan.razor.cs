@@ -1,6 +1,7 @@
 ﻿using BlazorApp1.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -30,7 +31,7 @@ namespace PrettyPlanLib
             error = string.Empty;
             try
             {
-                var streamReader = await TextArea!.GetTextAsync(maxLength: 2_000_000);
+                var streamReader = await TextArea!.GetTextAsync(maxLength: 4_000_000);
                 var getTextResult = await streamReader.ReadToEndAsync();
                 ParseTerraform(getTextResult);
             }
@@ -98,18 +99,21 @@ namespace PrettyPlanLib
 
         private TerraformResourceId ParseId(JsonObject resource)
         {
-            var name = resource["name"]?.ToString() ?? throw new ArgumentNullException(nameof(resource));
-            var address = resource["address"]?.ToString() ?? throw new ArgumentNullException(nameof(resource));
-            var addressWithoutResourceName = address.Substring(0, address.Length - name.Length - 2);
-            var module_address = resource["module_address"]?.ToString() ?? throw new ArgumentNullException(nameof(resource));
+            
+            var name = resource["name"]?.ToString() ?? 
+                throw new ArgumentNullException("name");
+            var address = resource["address"]?.ToString() ?? 
+                throw new ArgumentNullException("address");
+            //var addressWithoutResourceName = address.Substring(0, address.Length - name.Length - 2);
+            var module_address = resource["module_address"]?.ToString() ?? string.Empty; // if change is in root module, module_address is omitted
             var idSegments = module_address.Split('.');
             var resourcePrefixes = idSegments.ToList();
 
             return new TerraformResourceId
             {
                 Name = name,
-                Type = resource["type"]?.ToString() ?? throw new ArgumentNullException(nameof(resource)),
-                Address = resource["address"]?.ToString() ?? throw new ArgumentNullException(nameof(resource)),
+                Type = resource["type"]?.ToString() ?? throw new ArgumentNullException("type"),
+                Address = resource["address"]?.ToString() ?? throw new ArgumentNullException("address"),
                 Index = resource["index"]?.ToString(),
                 Prefixes = resourcePrefixes,
             };
