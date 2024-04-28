@@ -1,0 +1,24 @@
+﻿@page "/about"
+<h3>About</h3>
+
+<p>Terraform Pretty Plan provides a pretty way to visualize your terraform plan. You will need to paste your plan in json-format. Json-output can be derived as follows:</p>
+<pre>
+    terraform plan -out=plan.out
+    terraform show -json plan.out > plan.json
+</pre>
+<p>
+    Original version was built by Cloudandthings with Vue. Check it out: <a href="https://cloudandthings.github.io/terraform-pretty-plan/">https://cloudandthings.github.io/terraform-pretty-plan/</a>
+</p>
+
+<p>
+    This version was built with ASP.NET Core Blazor by Carl in 't Veld. Check out the source code: <a href="https://github.com/cveld/blazor-terraform-pretty-plan">https://github.com/cveld/blazor-terraform-pretty-plan</a>
+</p>
+
+<h3>The plus</h3>
+<p>
+    The main benefit of this version compared to its original, is that it displays the reason why a resource gets recreated.
+</p>
+@code {
+
+}
+ 

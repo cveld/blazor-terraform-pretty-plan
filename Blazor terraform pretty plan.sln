@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrettyPlanWasm.Client", "Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrettyPlanWasmStandalone", "PrettyPlanWasmStandalone\PrettyPlanWasmStandalone.csproj", "{21580C13-2D35-473A-84DA-0BAF310A0987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyPlanLib", "PrettyPlanLib\PrettyPlanLib.csproj", "{E32713BE-D5FA-4A13-BF59-F48597314E88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrettyPlanLib", "PrettyPlanLib\PrettyPlanLib.csproj", "{E32713BE-D5FA-4A13-BF59-F48597314E88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
